@@ -1,0 +1,10 @@
+C:\Users\18fer\source\repos\contractorCalculator\contractorCalculator\bin\Debug\contractorCalculator.exe.config
+C:\Users\18fer\source\repos\contractorCalculator\contractorCalculator\bin\Debug\contractorCalculator.exe
+C:\Users\18fer\source\repos\contractorCalculator\contractorCalculator\bin\Debug\contractorCalculator.pdb
+C:\Users\18fer\source\repos\contractorCalculator\contractorCalculator\obj\Debug\contractorCalculator.csprojAssemblyReference.cache
+C:\Users\18fer\source\repos\contractorCalculator\contractorCalculator\obj\Debug\contractorCalculator.projectSelectionForm.resources
+C:\Users\18fer\source\repos\contractorCalculator\contractorCalculator\obj\Debug\contractorCalculator.Properties.Resources.resources
+C:\Users\18fer\source\repos\contractorCalculator\contractorCalculator\obj\Debug\contractorCalculator.csproj.GenerateResource.cache
+C:\Users\18fer\source\repos\contractorCalculator\contractorCalculator\obj\Debug\contractorCalculator.exe
+C:\Users\18fer\source\repos\contractorCalculator\contractorCalculator\obj\Debug\contractorCalculator.pdb
+C:\Users\18fer\source\repos\contractorCalculator\contractorCalculator\obj\Debug\contractorCalculator.retainingWallForm.resources
