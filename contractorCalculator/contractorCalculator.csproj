@@ -62,6 +62,7 @@
       <DependentUpon>retainingWallForm.cs</DependentUpon>
     </Compile>
     <Compile Include="validateInput.cs" />
+    <Compile Include="writeXmlData.cs" />
     <EmbeddedResource Include="projectSelectionForm.resx">
       <DependentUpon>projectSelectionForm.cs</DependentUpon>
     </EmbeddedResource>

@@ -49,10 +49,10 @@
             this.wallLengthTextBox = new System.Windows.Forms.TextBox();
             this.wallHeightTextBox = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.projectNameTextBox = new System.Windows.Forms.TextBox();
-            this.projectNameLabel = new System.Windows.Forms.Label();
             this.saveToDbButton = new System.Windows.Forms.Button();
+            this.projectNameLabel = new System.Windows.Forms.Label();
+            this.projectNameTextBox = new System.Windows.Forms.TextBox();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -221,19 +221,15 @@
             this.tabPage2.Size = new System.Drawing.Size(792, 423);
             this.tabPage2.TabIndex = 0;
             // 
-            // tabPage3
+            // saveToDbButton
             // 
-            this.tabPage3.Location = new System.Drawing.Point(0, 0);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(200, 100);
-            this.tabPage3.TabIndex = 0;
-            // 
-            // projectNameTextBox
-            // 
-            this.projectNameTextBox.Location = new System.Drawing.Point(37, 51);
-            this.projectNameTextBox.Name = "projectNameTextBox";
-            this.projectNameTextBox.Size = new System.Drawing.Size(100, 26);
-            this.projectNameTextBox.TabIndex = 0;
+            this.saveToDbButton.Location = new System.Drawing.Point(666, 377);
+            this.saveToDbButton.Name = "saveToDbButton";
+            this.saveToDbButton.Size = new System.Drawing.Size(118, 32);
+            this.saveToDbButton.TabIndex = 2;
+            this.saveToDbButton.Text = "Save";
+            this.saveToDbButton.UseVisualStyleBackColor = true;
+            this.saveToDbButton.Click += new System.EventHandler(this.saveToDbButton_Click);
             // 
             // projectNameLabel
             // 
@@ -244,15 +240,19 @@
             this.projectNameLabel.TabIndex = 1;
             this.projectNameLabel.Text = "Project Name";
             // 
-            // saveToDbButton
+            // projectNameTextBox
             // 
-            this.saveToDbButton.Location = new System.Drawing.Point(666, 377);
-            this.saveToDbButton.Name = "saveToDbButton";
-            this.saveToDbButton.Size = new System.Drawing.Size(118, 32);
-            this.saveToDbButton.TabIndex = 2;
-            this.saveToDbButton.Text = "Save";
-            this.saveToDbButton.UseVisualStyleBackColor = true;
-            this.saveToDbButton.Click += new System.EventHandler(this.saveToDbButton_Click);
+            this.projectNameTextBox.Location = new System.Drawing.Point(37, 51);
+            this.projectNameTextBox.Name = "projectNameTextBox";
+            this.projectNameTextBox.Size = new System.Drawing.Size(224, 26);
+            this.projectNameTextBox.TabIndex = 0;
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Location = new System.Drawing.Point(0, 0);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(200, 100);
+            this.tabPage3.TabIndex = 0;
             // 
             // retainingWallForm
             // 
