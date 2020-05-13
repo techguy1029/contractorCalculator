@@ -33,6 +33,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.WindowsAPICodePack, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\WindowsAPICodePack-Core.1.1.1\lib\Microsoft.WindowsAPICodePack.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAPICodePack.Shell, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\WindowsAPICodePack-Shell.1.1.1\lib\Microsoft.WindowsAPICodePack.Shell.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -47,6 +53,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="convertInput.cs" />
+    <Compile Include="encryptString.cs" />
+    <Compile Include="passwordForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="passwordForm.Designer.cs">
+      <DependentUpon>passwordForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="projectInformation.cs" />
     <Compile Include="projectSelectionForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -55,14 +69,30 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="readXml.cs" />
     <Compile Include="retainingWallForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="retainingWallForm.Designer.cs">
       <DependentUpon>retainingWallForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="searchForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="searchForm.Designer.cs">
+      <DependentUpon>searchForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="settingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="settingsForm.Designer.cs">
+      <DependentUpon>settingsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="validateInput.cs" />
     <Compile Include="writeXmlData.cs" />
+    <EmbeddedResource Include="passwordForm.resx">
+      <DependentUpon>passwordForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="projectSelectionForm.resx">
       <DependentUpon>projectSelectionForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -74,10 +104,18 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="retainingWallForm.resx">
       <DependentUpon>retainingWallForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="searchForm.resx">
+      <DependentUpon>searchForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="settingsForm.resx">
+      <DependentUpon>settingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -90,6 +128,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gear-1119298_640.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
