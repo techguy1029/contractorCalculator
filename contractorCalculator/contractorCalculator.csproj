@@ -52,6 +52,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="authenticatePassword.cs" />
     <Compile Include="convertInput.cs" />
     <Compile Include="encryptString.cs" />
     <Compile Include="passwordForm.cs">
@@ -60,6 +61,7 @@
     <Compile Include="passwordForm.Designer.cs">
       <DependentUpon>passwordForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="passwordOperations.cs" />
     <Compile Include="projectInformation.cs" />
     <Compile Include="projectSelectionForm.cs">
       <SubType>Form</SubType>
@@ -82,12 +84,15 @@
     <Compile Include="searchForm.Designer.cs">
       <DependentUpon>searchForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="searchXml.cs" />
+    <Compile Include="settingsClass.cs" />
     <Compile Include="settingsForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="settingsForm.Designer.cs">
       <DependentUpon>settingsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="textFileOperations.cs" />
     <Compile Include="validateInput.cs" />
     <Compile Include="writeXmlData.cs" />
     <EmbeddedResource Include="passwordForm.resx">
