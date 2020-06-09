@@ -52,11 +52,18 @@ namespace contractorCalculator
             }
             */
             string password = passwordOperations.readInPassword();
-            if(textBoxPasswordInput.Text == password)
+            string userInput = textBoxPasswordInput.Text;
+            if(userInput == password)
             {
                 _authPass.correctPasswordInput = true;
                 MessageBox.Show("Correct Password");
                 this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Incorrect");
+                MessageBox.Show(password);
+                MessageBox.Show(userInput);
             }
         }
 

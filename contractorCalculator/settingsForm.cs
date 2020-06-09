@@ -75,7 +75,9 @@ namespace contractorCalculator
             if (validateInput.fieldsMatch(textBoxConfirmPs, textBoxPsInput))
             {
                 //string hashString = passwordOperations.setPassword(textBoxConfirmPs.Text, textBoxPsInput.Text);
-                passwordOperations.setUpPassword(textBoxConfirmPs.Text);
+                string pass = textBoxPsInput.Text;
+                //string hashedPass = passwordOperations.setPassword(textBoxConfirmPs.Text, textBoxPsInput.Text,pass);
+                passwordOperations.setUpPassword(pass);
                 projectSelectionForm._settingsClass.enablePasswordSetting();
                 MessageBox.Show("Password set");
                 //Application.Restart();

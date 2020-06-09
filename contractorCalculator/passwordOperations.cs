@@ -11,16 +11,23 @@ namespace contractorCalculator
 {
     public class passwordOperations
     {
-        public static string setPassword(string firstTxtBoxPs, string secondTxtBoxPs)
+        public static string setPassword(string firstTxtBoxPs, string secondTxtBoxPs, string pass)
         {
             //https://stackoverflow.com/questions/3984138/hash-string-in-c-sharp
             if (firstTxtBoxPs.Equals(secondTxtBoxPs))
             {
-                byte[] hash = encryptString.GetHash(firstTxtBoxPs);
+                byte[] hash = encryptString.GetHash(pass);
                 string hashString = System.Text.Encoding.UTF8.GetString(hash);
                 return hashString;
             }
             return null;
+        }    
+        public static string hashString(string stringToBeHashed)
+        {
+            //https://stackoverflow.com/questions/3984138/hash-string-in-c-sharp
+            byte[] hash = encryptString.GetHash(stringToBeHashed);
+            string hashString = System.Text.Encoding.UTF8.GetString(hash);
+            return hashString;
         }
 
         public static bool correctPasswordInput(string textBoxTxt)
@@ -93,7 +100,7 @@ namespace contractorCalculator
         public static void setUpPasswordDbStructure()
         {
             SqlConnection myConn = new SqlConnection("Server=(LocalDB)\\MSSQLLocalDB;Integrated security=SSPI;database=Test");
-            String createTable = "CREATE TABLE HashedPasswords(ID int IDENTITY, Password varchar(50))";
+            String createTable = "CREATE TABLE HashedPasswords(ID int IDENTITY, Password varchar(150))";
             SqlCommand createTableSQL = new SqlCommand(createTable, myConn);
             try
             {
