@@ -109,5 +109,18 @@ namespace contractorCalculator
                 return true;
             }
         }
+
+        public static bool fieldsMatch(TextBox textBox1, TextBox textBox2)
+        {
+            if(textBox1.Text == textBox2.Text)
+            {
+                return true;
+            }
+            else
+            {
+                MessageBox.Show("Fields must match!");
+                return false;
+            }
+        }
     }
 }

@@ -52,14 +52,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="authenticatePassword.cs" />
+    <Compile Include="changeLang.cs" />
     <Compile Include="convertInput.cs" />
+    <Compile Include="customizeAllControls.cs" />
     <Compile Include="encryptString.cs" />
+    <Compile Include="formInformation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formInformation.Designer.cs">
+      <DependentUpon>formInformation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formSeed.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formSeed.Designer.cs">
+      <DependentUpon>formSeed.cs</DependentUpon>
+    </Compile>
     <Compile Include="passwordForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="passwordForm.Designer.cs">
       <DependentUpon>passwordForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="passwordOperations.cs" />
     <Compile Include="projectInformation.cs" />
     <Compile Include="projectSelectionForm.cs">
       <SubType>Form</SubType>
@@ -82,16 +98,32 @@
     <Compile Include="searchForm.Designer.cs">
       <DependentUpon>searchForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="searchXml.cs" />
+    <Compile Include="settingsClass.cs" />
     <Compile Include="settingsForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="settingsForm.Designer.cs">
       <DependentUpon>settingsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="seedProjectInformation.cs" />
+    <Compile Include="textFileOperations.cs" />
     <Compile Include="validateInput.cs" />
     <Compile Include="writeXmlData.cs" />
+    <EmbeddedResource Include="formInformation.resx">
+      <DependentUpon>formInformation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formSeed.resx">
+      <DependentUpon>formSeed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="passwordForm.es-US.resx">
+      <DependentUpon>passwordForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="passwordForm.resx">
       <DependentUpon>passwordForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="projectSelectionForm.es-US.resx">
+      <DependentUpon>projectSelectionForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="projectSelectionForm.resx">
       <DependentUpon>projectSelectionForm.cs</DependentUpon>
@@ -106,11 +138,20 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="retainingWallForm.es-US.resx">
+      <DependentUpon>retainingWallForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="retainingWallForm.resx">
       <DependentUpon>retainingWallForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="searchForm.es-US.resx">
+      <DependentUpon>searchForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="searchForm.resx">
       <DependentUpon>searchForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="settingsForm.es-US.resx">
+      <DependentUpon>settingsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="settingsForm.resx">
       <DependentUpon>settingsForm.cs</DependentUpon>
@@ -130,7 +171,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\gear-1119298_640.png" />
+    <Content Include="Resources\question-1243504_640.png" />
+    <None Include="Resources\question-1243504_6401.png" />
+    <Content Include="Resources\safety-helmet-295057_1280..png" />
+    <Content Include="Resources\safety-helmet-295057_1280.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

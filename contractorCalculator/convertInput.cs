@@ -16,5 +16,10 @@ namespace contractorCalculator
             decimal.TryParse(textBoxText,out textBoxTextToDecimal);
             return textBoxTextToDecimal;
         }
+
+        public static string stringToMoney(string money)
+        {
+            return "$" + money;
+        }
     }
 }

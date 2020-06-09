@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Xml;
 using System.Xml.Linq;
@@ -30,10 +31,15 @@ namespace contractorCalculator
         {
             string commonDir = Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData);
             string programDir = Path.Combine(commonDir, @"contractorCalc\\Data");
-            string xmlFilePath = programDir + "\\data.xml";
+            string xmlFilePath = programDir + "\\data-1.xml";
             return xmlFilePath;
         }
-        public static void writeRetainingWallDataToXML(decimal wallHeight, decimal wallLength, decimal blockHeight, decimal blockLength, string projectName, decimal blocksNeeded)
+        //https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/named-and-optional-arguments
+        public static void writeRetainingWallDataToXML(decimal wallHeight, 
+            decimal wallLength, decimal blockHeight, decimal blockLength, 
+            string projectName, decimal blocksNeeded, decimal blockCost,
+            decimal totalCost, decimal allBlockCost, decimal rowNum, decimal colNum,
+            decimal capCost = 0, decimal allCapCost = 0, decimal totalCaps = 0)
         {
             string pathToXml = returnXmlPath();
             if(!File.Exists(pathToXml))
@@ -61,22 +67,36 @@ namespace contractorCalculator
             }
 
             XDocument xDocument = XDocument.Load(pathToXml);
-            //gets first child element of specified element
-            XElement root = xDocument.Element("SavedData");
 
-            IEnumerable<XElement> rows = root.Descendants("Projects");
+            XElement root = xDocument.Element("Projects");
 
-            XElement xmlForProject = new XElement(projectName,
+
+            //https://stackoverflow.com/questions/6219454/efficient-way-to-remove-all-whitespace-from-string
+
+
+            string xmlProjectNameElement = Regex.Replace(projectName, @"\s+", "");
+            xmlProjectNameElement = "_" + xmlProjectNameElement;
+
+            XElement xmlForProject = new XElement(xmlProjectNameElement,
                 new XElement("ProjectName", projectName),
-                new XElement("ProjectType", "RetainingWall", 1),
-                new XElement("WallHeight", wallHeight, 2),
-                new XElement("WallLength", wallLength, 3),
-                new XElement("BlockHeight", blockHeight, 4),
-                new XElement("BlockLength", blockLength, 5),
-                new XElement("BlocksNeeded", blocksNeeded, 6)
+                new XElement("ProjectType", "RetainingWall"),
+                new XElement("WallHeight", wallHeight),
+                new XElement("WallLength", wallLength),
+                new XElement("BlockHeight", blockHeight),
+                new XElement("BlockLength", blockLength),
+                new XElement("BlocksNeeded", blocksNeeded),
+                new XElement("BlockCost", blockCost),
+                new XElement("TotalCost", totalCost),
+                new XElement("AllBlockCost", allBlockCost),
+                new XElement("RowNum", rowNum),
+                new XElement("ColNum", colNum),
+                new XElement("CapCost", capCost),
+                new XElement("AllCapCost", allCapCost),
+                new XElement("TotalCaps", totalCaps)
+
+
             );
-            XElement firstRow = rows.First();
-            firstRow.Add
+            root.Add
                 (
                     xmlForProject
                 );
